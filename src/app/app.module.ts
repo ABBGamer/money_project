@@ -11,10 +11,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { AboutComponent } from './components/about/about.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactsComponent,
+    AboutComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

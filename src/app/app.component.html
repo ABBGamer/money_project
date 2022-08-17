@@ -6,71 +6,16 @@
       </mat-icon>
     </div>
     <div>
-      <button mat-flat-button>ДЕНЬГИ И ПОКУПКИ</button>
+      <button mat-flat-button (click)="navigateTo('')">ДЕНЬГИ И ПОКУПКИ</button>
     </div>
   </div>
   <div>
-    <button mat-flat-button>ГЛАВНАЯ</button>
-    <button mat-flat-button>ОБ АВТОРЕ</button>
+    <button mat-flat-button (click)="navigateTo('')">ГЛАВНАЯ</button>
+    <button mat-flat-button (click)="navigateTo('about')">ОБ АВТОРЕ</button>
     <button mat-flat-button>РАБОТЫ</button>
     <button mat-flat-button>ПРОЦЕСС</button>
-    <button mat-flat-button>КОНТАКТЫ</button>
+    <button mat-flat-button (click)="navigateTo('contacts')">КОНТАКТЫ</button>
   </div>
 </div>
-<div class="content df fxdc aic">
-  <div class="p-8">ДОБРО ПОЖАЛОВАТЬ</div>
-  <div class="df fxdc aic">
-    <form>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>ЗП</mat-label>
-        <input matInput [formControl]="salary" placeholder="Введите ЗП" value="43000" required>
-      </mat-form-field>
-    </form>
-    <button mat-flat-button (click)="enterSalary()">Ввод</button>
-  </div>
 
-  <div *ngIf="isVisible" class="df fxdc aic">
-    <div>
-      <div class="df fxdr aic">
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerSecond.toFixed(2)}}
-          </div>
-          <div>
-            в секунду
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerMinute.toFixed(2)}}
-          </div>
-          <div>
-            в минуту
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerHour.toFixed(2)}}
-          </div>
-          <div>
-            в час
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerDay.toFixed(2)}}
-          </div>
-          <div>
-            в день
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="df fxdc aic m-20">
-      <div class="fz-20 m-10">Заработок на данный момент с начала месяца</div>
-      <div class="fz-40">
-        {{salaryToDay.toFixed(2)}} руб.
-      </div>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
