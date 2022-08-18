@@ -1,0 +1,27 @@
+img {
+  margin: 8px;
+  height: 55px;
+  width: 55px;
+}
+
+.customBtn {
+  cursor: pointer;
+  height: 110px;
+  width: 100px;
+  margin: 20px;
+  padding-top: 20px;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+}
+
+.customBtn:hover {
+  background: #e5e5e5;
+}
+
+.link a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  height: 100%;
+  color: #666;
+}
