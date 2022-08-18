@@ -14,13 +14,19 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { AboutComponent } from './components/about/about.component';
 import { MainComponent } from './components/main/main.component';
+import { EconomyComponent } from './components/economy/economy.component';
+import { DepositComponent } from './components/deposit/deposit.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     AboutComponent,
-    MainComponent
+    MainComponent,
+    EconomyComponent,
+    DepositComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,
