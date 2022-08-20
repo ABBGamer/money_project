@@ -125,13 +125,15 @@
     <div class="df fxdc aic m-4">
       <div class="fz-8 m-10">Заработок на данный момент с начала месяца</div>
       <div class="fz-20 bold">
-        {{salaryToNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}
+<!--        {{salaryToNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}-->
+        {{salaryToNow.toFixed(2)}}
       </div>
     </div>
     <div class="df fxdc aic m-4">
       <div class="fz-8 m-10">Заработок за время открытия приложения</div>
       <div class="fz-20 bold pb-8">
-        {{salaryNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}
+<!--        {{salaryNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}-->
+        {{salaryNow.toFixed(2)}}
       </div>
     </div>
     <button mat-flat-button (click)="back()" color="primary">Вернуться</button>
