@@ -66,6 +66,9 @@ MIT
 @angular/router
 MIT
 
+@ngneat/until-destroy
+MIT
+
 rxjs
 Apache-2.0
                                Apache License

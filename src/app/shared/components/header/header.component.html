@@ -1,0 +1,29 @@
+<div *ngIf="!isMobile else mobileTemp" class="header-container">
+  <div class="header df jcsb">
+    <div class="df aic cur-p" routerLink="" >
+      <mat-icon class="material-symbols-outlined mr-8">
+        savings
+      </mat-icon>
+      <span>ДЕНЬГИ И ПОКУПКИ</span>
+    </div>
+    <div class="df">
+      <a *ngFor="let item of menuItems "
+         [routerLink]="item.link"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}"
+         class="menu-link df aic jcc p-lr-8 bold color-white"
+      >
+        {{item.name}}
+      </a>
+    </div>
+  </div>
+</div>
+
+<ng-template #mobileTemp>
+  <mat-toolbar color="primary">
+    <div class="mr-16 mt-8" (click)="toggleSidenav.emit()">
+      <mat-icon>menu</mat-icon>
+    </div>
+    <span>ДЕНЬГИ И ПОКУПКИ</span>
+  </mat-toolbar>
+</ng-template>

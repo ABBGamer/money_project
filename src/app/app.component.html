@@ -1,22 +1,18 @@
-<div class="content df jcsb">
-  <div class="df aic">
-    <div>
-      <mat-icon class="material-symbols-outlined">
-        savings
-      </mat-icon>
+<div  class="df jcsb fxdc flex1">
+
+  <app-header (toggleSidenav)="drawer.toggle()"></app-header>
+
+  <mat-drawer-container autosize class="sidenav-container " [class]="{'pt-64':!isMobile}">
+
+    <mat-drawer #drawer mode="over">
+      <app-left-sidenav *ngIf="isMobile" (closeSidenav)="drawer.toggle()"></app-left-sidenav>
+    </mat-drawer>
+
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
-    <div>
-      <button mat-flat-button (click)="navigateTo('')">ДЕНЬГИ И ПОКУПКИ</button>
-    </div>
-  </div>
-  <div>
-    <button mat-flat-button (click)="navigateTo('')">ГЛАВНАЯ</button>
-    <button mat-flat-button (click)="navigateTo('purchase')">ПОКУПКИ</button>
-    <button mat-flat-button (click)="navigateTo('economy')">ЭКОНОМ</button>
-    <button mat-flat-button (click)="navigateTo('deposit')">ВКЛАДЫ</button>
-    <button mat-flat-button (click)="navigateTo('about')">ОБ АВТОРЕ</button>
-    <button mat-flat-button (click)="navigateTo('contacts')">КОНТАКТЫ</button>
-  </div>
+
+  </mat-drawer-container>
 </div>
 
-<router-outlet></router-outlet>
+

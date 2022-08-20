@@ -1,3 +1,46 @@
-<div class="content">
-  <p>purchase works!</p>
+<div class=" df fxdc aic">
+  <div *ngIf="!isVisible" class="df fxdc aic">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>СТОИМОСТЬ</mat-label>
+      <input matInput [formControl]="price" placeholder="Введите стоимость" value="" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>ЗП</mat-label>
+      <input matInput [formControl]="salary" placeholder="Введите зарплату" value="" required>
+    </mat-form-field>
+    <button class="mb-8 w100p" mat-flat-button (click)="enterData()" color="primary">Ввод</button>
+  </div>
+
+  <div *ngIf="isVisible" class="df fxdc aic">
+  <div>
+    <div class="df fxdc aic">
+      <div class="m-20 df fxdc aic">
+        <div class="fz-36 bold">
+          {{salaryInTime[3].toFixed(0)|  suffix   : ' день' :  ' дня' :  ' дней'}}
+        </div>
+      </div>
+      <div class="m-20 df fxdc aic">
+        <div class="fz-36 bold">
+          {{salaryInTime[2].toFixed(0) |  suffix   : ' час' :  ' часа' :  ' часов'}}
+        </div>
+      </div>
+      <div class="m-20 df fxdc aic">
+        <div class="fz-36 bold">
+          {{salaryInTime[1].toFixed(0) |  suffix   : ' минута' :  ' минуты' :  ' минут'}}
+
+        </div>
+
+      </div>
+      <div class="m-20 df fxdc aic">
+        <div class="fz-36 bold">
+          {{salaryInTime[0].toFixed(0) |  suffix   : ' секунда' :  ' секунды' :  ' секунд'}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <button  mat-flat-button color="primary" (click)="enterData()">Вернуться</button>
+  </div>
+    </div>
 </div>

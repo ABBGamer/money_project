@@ -1,68 +1,12 @@
-<div class="content df fxdc aic">
-  <div *ngIf="!isVisible">
-<!--    <div class="p-8">ДОБРО ПОЖАЛОВАТЬ</div>-->
-    <div class="df fxdc aic">
-      <form>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>ЗП</mat-label>
-          <input matInput [formControl]="salary" placeholder="Введите ЗП" value="43000" required>
-        </mat-form-field>
-      </form>
-      <button mat-flat-button (click)="enterSalary()">Ввод</button>
-    </div>
-  </div>
-
-
-  <div *ngIf="isVisible" class="df fxdc aic">
-    <div>
-      <div class="df fxdr aic">
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerSecond.toFixed(2)}}
-          </div>
-          <div>
-            в секунду
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerMinute.toFixed(2)}}
-          </div>
-          <div>
-            в минуту
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerHour.toFixed(2)}}
-          </div>
-          <div>
-            в час
-          </div>
-        </div>
-        <div class="m-20 df fxdc aic">
-          <div class="fz-36">
-            {{salaryPerDay.toFixed(2)}}
-          </div>
-          <div>
-            в день
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="df fxdc aic m-20">
-      <div class="fz-20 m-10">Заработок на данный момент с начала месяца</div>
-      <div class="fz-40">
-        {{salaryToDay.toFixed(2)}} руб.
-      </div>
-    </div>
-    <div class="df fxdc aic m-20">
-      <div class="fz-20 m-10">Заработок за время открытия приложения</div>
-      <div class="fz-40">
-        {{salaryNow.toFixed(2)}} руб.
-      </div>
-    </div>
-    <button mat-flat-button (click)="visible(isVisible)">Вернуться</button>
-  </div>
-
+<div class=" df fxdc aic">
+  <h2 [class]="{'mt-4':isMobile}" class="bold">Добро пожаловать!</h2>
+  <h3>Возможности сайта!</h3>
+  <ul [class]="{'pl-16':isMobile}">
+    <li> ЗАРАБОТОК - высчитать заработок</li>
+    <li> ПОКУПКИ - расчитать покупку во времени</li>
+    <li> ЭКОНОМ - расчитать экономию</li>
+    <li> ВКЛАДЫ - рассчитать, когда Вы станете богаче</li>
+  </ul>
 </div>
+
+

@@ -1,0 +1,16 @@
+.header{
+  width: 1300px;
+  margin: 0 auto;
+  padding: 16px 0;
+  background: #3f50b5;
+  color: white;
+}
+
+.header-container{
+  background: #3f50b5;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
+  top: 0;
+}

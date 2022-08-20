@@ -1,0 +1,11 @@
+<div class="df fxdc p-lr-24 pt-16">
+  <a *ngFor="let item of menuItems "
+    [routerLink]="item.link"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{exact:true}"
+     (click)="closeSidenav.emit()"
+     class="menu-link w100p df aic jcc p-tb-8 bold color-gray"
+  >
+    {{item.name}}
+  </a>
+</div>

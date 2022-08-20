@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, HostListener} from '@angular/core';
+import {HelperService} from "./services/helper.service";
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,20 @@ import {Router} from "@angular/router";
 })
 
 export class AppComponent {
-  constructor(
-    private _router:Router
-  ) {
+  isMobile: boolean
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this._helperService.setMobile(window.innerWidth <= 768)
   }
 
-  navigateTo(path:string){
-    this._router.navigate([path]);
+  constructor(
+    private _helperService: HelperService
+  ) {
+    this._helperService.setMobile(window.innerWidth <= 768)
+    this._helperService.isMobile$.subscribe((data) => {
+      this.isMobile = data
+    })
   }
+
 }

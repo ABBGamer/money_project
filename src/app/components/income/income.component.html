@@ -1,0 +1,140 @@
+<div *ngIf="!isMobile else mobileTemp" class=" df fxdc aic">
+  <div *ngIf="!isVisible">
+    <div class="df fxdc aic">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>ЗП</mat-label>
+        <input matInput [formControl]="salary" placeholder="Введите ЗП" value="" required (keydown.enter)="enterSalary()">
+      </mat-form-field>
+      <button class="w100p" mat-flat-button color="primary" (click)="enterSalary()">Ввод</button>
+    </div>
+  </div>
+
+  <div *ngIf="isVisible" class="df fxdc aic">
+    <div>
+      <div class="df fxdr aic">
+        <div class="m-20 df fxdc aic">
+          <div class="fz-36 bold">
+            {{salaryInTime[0].toFixed(2)}}
+          </div>
+          <div>
+            в секунду
+          </div>
+        </div>
+        <div class="m-20 df fxdc aic">
+          <div class="fz-36 bold">
+            {{salaryInTime[1].toFixed(2)}}
+          </div>
+          <div>
+            в минуту
+          </div>
+        </div>
+        <div class="m-20 df fxdc aic">
+          <div class="fz-36 bold">
+            {{salaryInTime[2].toFixed(2)}}
+
+          </div>
+          <div>
+            в час
+          </div>
+        </div>
+        <div class="m-20 df fxdc aic">
+          <div class="fz-36 bold">
+            {{salaryInTime[3].toFixed(2)}}
+          </div>
+          <div>
+            в день
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="df fxdc aic m-20">
+      <div class="fz-20 m-10">Заработок на данный момент с начала месяца</div>
+      <div class="fz-40 bold">
+<!--        {{salaryToNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}-->
+        {{salaryToNow.toFixed(2)}}
+      </div>
+    </div>
+    <div class="df fxdc aic m-20">
+      <div class="fz-20 m-10">Заработок за время открытия приложения</div>
+      <div class="fz-40 bold">
+<!--        {{salaryNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}-->
+        {{salaryNow.toFixed(2)}}
+      </div>
+    </div>
+    <button mat-flat-button (click)="back()" color="primary">Вернуться</button>
+  </div>
+</div>
+
+<ng-template #mobileTemp>
+  <div *ngIf="!isVisible">
+    <!--    <div class="p-8">ДОБРО ПОЖАЛОВАТЬ</div>-->
+    <div class="df fxdc aic">
+      <form>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>ЗП</mat-label>
+          <input matInput [formControl]="salary" placeholder="Введите ЗП" value="" required>
+        </mat-form-field>
+      </form>
+      <button mat-flat-button (click)="enterSalary()" color="primary">Ввод</button>
+    </div>
+  </div>
+
+  <div *ngIf="isVisible" class="df fxdc aic">
+    <div class="df fxdr aic">
+      <div class="df fxdc aic">
+        <div class="m-8 df fxdr aic">
+          <div class="df fxdc aic">
+            <div class="fz-12 bold">
+              {{salaryInTime[0].toFixed(2)}}
+            </div>
+            <div>
+              в секунду
+            </div>
+          </div>
+
+          <div class=" m-8 df fxdc aic">
+            <div class="fz-12 bold">
+              {{salaryInTime[1].toFixed(2)}}
+            </div>
+            <div>
+              в минуту
+            </div>
+          </div>
+          <div class="m-8 df fxdc aic">
+            <div class="fz-12 bold">
+              {{salaryInTime[2].toFixed(2)}}
+            </div>
+            <div>
+              в час
+            </div>
+          </div>
+          <div class="m-8 df fxdc aic">
+            <div class="fz-12 bold">
+              {{salaryInTime[3].toFixed(2)}}
+            </div>
+            <div>
+              в день
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="df fxdc aic m-4">
+      <div class="fz-8 m-10">Заработок на данный момент с начала месяца</div>
+      <div class="fz-20 bold">
+        {{salaryToNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}
+      </div>
+    </div>
+    <div class="df fxdc aic m-4">
+      <div class="fz-8 m-10">Заработок за время открытия приложения</div>
+      <div class="fz-20 bold pb-8">
+        {{salaryNow.toFixed(2) |  suffix   : ' рубль' :  ' рубля' :  ' рублей'}}
+      </div>
+    </div>
+    <button mat-flat-button (click)="back()" color="primary">Вернуться</button>
+  </div>
+</ng-template>
+<!--a.getDay()-->
